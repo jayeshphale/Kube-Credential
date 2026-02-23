@@ -131,11 +131,11 @@ Ingress is optional and not included.
 
 Hosted URLs (Optional)
 
-Frontend: https://<your-frontend-host>
+- Frontend (deployed): https://kube-credential-three.vercel.app/
 
-Issuance API: https://<issuance-host>/issue
+- Issuance API: https://<issuance-host>/issue
 
-Verification API: https://<verification-host>/verify
+- Verification API: https://<verification-host>/verify
 
 Submission Bundle
 
