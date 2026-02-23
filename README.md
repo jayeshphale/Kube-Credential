@@ -152,3 +152,21 @@ k8s/
 docs/ (screenshots)
 
 README.md
+
+## Deploying Frontend to Vercel (with backend on EC2)
+
+1. In `frontend/src/config.ts` the app reads two Vite environment variables:
+
+- `VITE_ISSUANCE_URL` — full URL for the issuance API (e.g. `http://3.111.213.132:5000`)
+- `VITE_VERIFICATION_URL` — full URL for the verification API (e.g. `http://3.111.213.132:6000`)
+
+2. On Vercel, set the Environment Variables (Project Settings → Environment Variables):
+
+- `VITE_ISSUANCE_URL` = `http://<EC2_IP>:5000`
+- `VITE_VERIFICATION_URL` = `http://<EC2_IP>:6000`
+
+3. Build & deploy: Vercel will include the `VITE_` variables at build time and the frontend will call the backend using those URLs.
+
+Notes:
+- Ensure your EC2 instance accepts inbound traffic on the API ports (5000 and 6000) and that security groups allow Vercel's requests.
+- For HTTPS in production, consider terminating TLS at a load balancer (ELB) and using secure backend URLs.

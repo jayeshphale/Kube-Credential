@@ -5,3 +5,4 @@ dist/
 .vscode/
 .DS_Store
 kube-credential-submission.zip
+.vercel

@@ -1,4 +1,5 @@
 import React from "react";
+import { verificationEndpoint } from "../config";
 
 export default function VerifyPage() {
   const [id, setId] = React.useState("");
@@ -10,7 +11,7 @@ export default function VerifyPage() {
     setLoading(true);
     setOut(null);
     try {
-      const res = await fetch("/verify", {
+      const res = await fetch(verificationEndpoint('/verify'), {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ id }),

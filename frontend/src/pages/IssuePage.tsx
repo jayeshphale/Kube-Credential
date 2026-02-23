@@ -1,4 +1,5 @@
 import React from "react";
+import { issuanceEndpoint } from "../config";
 
 export default function IssuePage() {
   const [form, setForm] = React.useState({ id: "", name: "", course: "" });
@@ -10,7 +11,7 @@ export default function IssuePage() {
     setLoading(true);
     setOut(null);
     try {
-      const res = await fetch("/issue", {
+      const res = await fetch(issuanceEndpoint('/issue'), {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(form),
