@@ -1,0 +1,5 @@
+# Normalize text files
+* text=auto
+
+# Do not treat node_modules as text
+node_modules/** -text

@@ -1,0 +1,7 @@
+node_modules/
+dist/
+*.db
+/.idea/
+.vscode/
+.DS_Store
+kube-credential-submission.zip
